@@ -3,6 +3,6 @@
 
 #include <cmath>
 
-double square_root(double num);
+long double square_root(long double num);
 
 #endif /* #ifndef SquareRoot_ */

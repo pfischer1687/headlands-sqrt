@@ -18,6 +18,7 @@ int main()
     u.test("positive float", square_root((float)42) == sqrt(42));
     u.test("positive double", square_root((double)42) == sqrt(42));
     u.test("positive long double", square_root((long double)42) == sqrt(42));
+    u.test("zero", square_root(0) == sqrt(0));
 
     u.report();
 
