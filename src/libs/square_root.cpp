@@ -23,6 +23,11 @@ double square_root_log10(double num)
 
 double square_root_newton(double num)
 {
-    /* Return the square root given by the Newton-Raphson method */
+    /* Return the square root calculated by the Newton-Raphson method */
+    if (num == 0)
+        return num;
+    if (num < 0)
+        return std::numeric_limits<double>::quiet_NaN();
+
     return sqrt(num);
 }
