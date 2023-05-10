@@ -24,7 +24,7 @@ void UnitTest::test(const char *description, const int flag)
         pf = _fstr;
         ++_fail_count;
     }
-    if (!_summary_flag)
+    if (_summary_flag)
         std::cout << _tstr << ": " << description << " -> " << pf << "\n";
 }
 
