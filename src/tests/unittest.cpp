@@ -30,5 +30,6 @@ void UnitTest::test(const char *description, const int flag)
 
 void UnitTest::report() const
 {
-    std::cout << _tstr << ": pass: " << pass_count() << ", fail: " << fail_count() << "\n";
+    std::cout << "\n"
+              << _tstr << ": pass: " << pass_count() << ", fail: " << fail_count() << "\n";
 }

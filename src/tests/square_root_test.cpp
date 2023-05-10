@@ -4,6 +4,7 @@
 #include <iostream>
 
 bool summary_flag = true;
+double tolerance = 0.000005;
 
 int main()
 {
@@ -12,14 +13,40 @@ int main()
     UnitTest u("UnitTest");
     u.summary(summary_flag);
 
-    std::cout << "\nTesting square_root -----\n";
+    std::cout << "\nTesting square_root_stl -----\n";
 
-    u.test("positive int", square_root((int)42) == sqrt((int)42));
-    u.test("positive float", square_root((float)42.1) == sqrt((float)42.1));
-    u.test("positive double", square_root((double)42.2) == sqrt((double)42.2));
-    u.test("positive long double", square_root((long double)42.3) == sqrt((long double)42.3));
-    u.test("zero", square_root(0) == sqrt(0));
-    u.test("negative int", std::isnan(square_root(-42)));
+    u.test("positive int", std::abs(square_root_stl(42) - std::sqrt(42)) < tolerance);
+    u.test("positive double", std::abs(square_root_stl(42.1) - std::sqrt(42.1)) < tolerance);
+    u.test("zero", std::abs(square_root_stl(0)) < tolerance);
+    u.test("negative int", std::isnan(square_root_stl(-42)));
+
+    std::cout << "\nTesting square_root_pow -----\n";
+
+    u.test("positive int", std::abs(square_root_pow(42) - std::sqrt(42)) < tolerance);
+    u.test("positive double", std::abs(square_root_pow(42.1) - std::sqrt(42.1)) < tolerance);
+    u.test("zero", std::abs(square_root_pow(0)) < tolerance);
+    u.test("negative int", std::isnan(square_root_pow(-42)));
+
+    std::cout << "\nTesting square_root_log -----\n";
+
+    u.test("positive int", std::abs(square_root_log(42) - std::sqrt(42)) < tolerance);
+    u.test("positive double", std::abs(square_root_log(42.1) - std::sqrt(42.1)) < tolerance);
+    u.test("zero", std::abs(square_root_log(0)) < tolerance);
+    u.test("negative int", std::isnan(square_root_log(-42)));
+
+    std::cout << "\nTesting square_root_log10 -----\n";
+
+    u.test("positive int", std::abs(square_root_log10(42) - std::sqrt(42)) < tolerance);
+    u.test("positive double", std::abs(square_root_log10(42.1) - std::sqrt(42.1)) < tolerance);
+    u.test("zero", std::abs(square_root_log10(0)) < tolerance);
+    u.test("negative int", std::isnan(square_root_log10(-42)));
+
+    std::cout << "\nTesting square_root_newton -----\n";
+
+    u.test("positive int", std::abs(square_root_newton(42) - std::sqrt(42)) < tolerance);
+    u.test("positive double", std::abs(square_root_newton(42.1) - std::sqrt(42.1)) < tolerance);
+    u.test("zero", std::abs(square_root_newton(0)) < tolerance);
+    u.test("negative int", std::isnan(square_root_newton(-42)));
 
     u.report();
 

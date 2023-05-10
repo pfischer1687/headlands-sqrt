@@ -18,6 +18,7 @@ out the square root of 42.
 - compile test: `make test`
 - run main: `./sqrt`
 - run test: `./test`
+- clean: `make clean`
 
 ## Version
 
@@ -35,6 +36,16 @@ Paul Fischer
 ## Dependencies
 
 - `g++@11.3.0`
+
+## Keywords
+
+- Square Root (sqrt)
+- Math (cmath)
+- Standard Template Library (STL)
+- Power (pow)
+- Natural Logarithm (log)
+- Common Logarithm (log10)
+- Newton-Raphson Method
 
 ## License
 
