@@ -18,4 +18,4 @@ $(TARGETTEST): $(SRCTEST)
 all: $(TARGETMAIN) $(TARGETTEST)
 
 clean:
-	rm -f $(TARGETMAIN) $(TARGETTEST) 
+	rm -f $(TARGETMAIN) $(TARGETTEST) *.stackdump
